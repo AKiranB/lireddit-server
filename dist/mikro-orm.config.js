@@ -6,13 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const constants_1 = require("./constants");
 const path_1 = __importDefault(require("path"));
 const Post_1 = require("./entities/Post");
+const User_1 = require("./entities/User");
 console.log(__dirname);
 const config = {
     migrations: {
         path: path_1.default.join(__dirname, "./migrations"),
         pattern: /^[\w-]+\d+\.[tj]s$/,
     },
-    entities: [Post_1.Post],
+    entities: [Post_1.Post, User_1.User],
     dbName: "lireddit",
     type: "postgresql",
     debug: !constants_1.__prod__,
